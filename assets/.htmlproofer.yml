@@ -1,0 +1,7 @@
+no_enforce_https: true
+disable_external: true
+
+url_ignore:
+  - "/^http:\\/\\/127.0.0.1/"
+  - "/^http:\\/\\/0.0.0.0/"
+  - "/^http:\\/\\/localhost/"
