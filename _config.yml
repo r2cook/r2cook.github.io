@@ -218,6 +218,11 @@ exclude:
   - "package*.json"
   - vendor
   - assets/robots.txt
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - .jekyll-cache
+  - .jekyll-metadata
 
 jekyll-archives:
   enabled: [categories, tags]
@@ -227,3 +232,8 @@ jekyll-archives:
   permalinks:
     tag: /tags/:name/
     category: /categories/:name/
+
+jekyll-sitemap:
+  exclude:
+    - /assets/js/data/search.json
+    - /404.html
