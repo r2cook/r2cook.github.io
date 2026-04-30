@@ -60,9 +60,9 @@ webmaster_verifications:
 # Web Analytics Settings
 analytics:
   google:
-    id: # fill in your Google Analytics ID
+    id: G-CQHH3DZ94X # fill in your Google Analytics ID
   goatcounter:
-    id: r2cook.goatcounter.com
+    id: 
   umami:
     id: # fill in your Umami ID
     domain: # fill in your Umami domain
