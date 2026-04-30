@@ -8,11 +8,10 @@
     }
 
     gtag('js', new Date());
-    
-    // Updated config to fix the cookie domain error
+
     gtag('config', '{{ site.analytics.google.id }}', {
       'cookie_domain': 'r2cook.github.io',
       'cookie_flags': 'SameSite=None;Secure'
-    });
-  });
+    }); // <--- Ensure this has the }; and then the ) and then the ;
+  }); // <--- Ensure this has the }; and then the ) and then the ;
 </script>
