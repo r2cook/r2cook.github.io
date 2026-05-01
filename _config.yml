@@ -1,26 +1,28 @@
-# =========================
-# THEME
-# =========================
+# The Site Configuration
+
+# Import the theme
 theme: jekyll-theme-chirpy
 
+# The language of the webpage › http://www.lingoes.net/en/translator/langcode.htm
+# If it has the same name as one of the files in folder `_data/locales`, the layout language will also be changed,
+# otherwise, the layout language will use the default value of 'en'.
 lang: en
+
+# Change to your timezone › https://zones.arilyn.cc
 timezone: Africa/Cairo
 
-# =========================
-# SITE INFO
-# =========================
-title: r2cook
-tagline: Red Teaming | CTFs | OSCP Journey
+# jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
+# ↓ --------------------------
 
-description: >-
+title: r2cook # the main title
+
+tagline: Red Teaming | CTFs | OSCP Journey # it will display as the subtitle
+
+description: >- # used by seo meta and the atom feed
   Cybersecurity blog by r2cook featuring CTF writeups, red teaming notes, OSCP preparation, and penetration testing research.
 
 url: "https://r2cook.github.io"
-baseurl: ""
 
-# =========================
-# SOCIAL / SEO
-# =========================
 github:
   username: r2cook
 
@@ -30,99 +32,127 @@ twitter:
 social:
   name: r2cook
   email: r2cook@gmail.com
+  fediverse_handle:
   links:
     - https://twitter.com/0xr2cook
     - https://github.com/r2cook
 
-# =========================
-# THEME SETTINGS
-# =========================
-theme_mode: dark
-toc: true
-paginate: 10
+webmaster_verifications:
+  google:
+  bing:
+  alexa:
+  yandex:
+  baidu:
+  facebook:
 
-avatar: /assets/img/logo.png
-
-# =========================
-# ANALYTICS
-# =========================
 analytics:
   google:
     id: G-CQHH3DZ94X
+  goatcounter:
+    id:
+  umami:
+    id:
+    domain:
+  matomo:
+    id:
+    domain:
+  cloudflare:
+    id:
+  fathom:
+    id:
 
 pageviews:
   provider:
 
-# =========================
-# COMMENTS (disabled)
-# =========================
+theme_mode: dark
+
+cdn:
+
+avatar: /assets/img/logo.png
+
+social_preview_image:
+
+toc: true
+
 comments:
   provider:
+  disqus:
+    shortname:
+  utterances:
+    repo:
+    issue_term:
+  giscus:
+    repo:
+    repo_id:
+    category:
+    category_id:
+    mapping:
+    strict:
+    input_position:
+    lang:
+    reactions_enabled:
 
-# =========================
-# PWA
-# =========================
+assets:
+  self_host:
+    enabled:
+    env:
+
 pwa:
   enabled: true
   cache:
     enabled: true
+    deny_paths:
 
-# =========================
-# SEO CLEAN CONTROL
-# =========================
-defaults:
+paginate: 10
 
-  # POSTS (INDEXED)
-  - scope:
-      path: ""
-      type: posts
-    values:
-      layout: post
-      comments: true
-      toc: true
-      permalink: /posts/:title/
-      sitemap: true
+baseurl: ""
 
-  # PAGES (INDEXED)
-  - scope:
-      path: ""
-      type: pages
-    values:
-      sitemap: true
+kramdown:
+  footnote_backlink: "&#8617;&#xfe0e;"
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: highlight
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
+      start_line: 1
 
-  # TABS
-  - scope:
-      path: ""
-      type: tabs
-    values:
-      layout: page
-      permalink: /:title/
+collections:
+  tabs:
+    output: true
+    sort_by: order
 
-  # DRAFTS
-  - scope:
-      path: _drafts
-    values:
-      comments: false
+sass:
+  style: compressed
 
-  # 🚨 IMPORTANT: TAGS = NOINDEX
-  - scope:
-      path: ""
-      type: tags
-    values:
-      sitemap: false
-      robots: noindex
+compress_html:
+  clippings: all
+  comments: all
+  endings: all
+  profile: false
+  blanklines: false
+  ignore:
+    envs: [development]
 
-  # 🚨 IMPORTANT: CATEGORIES = NOINDEX
-  - scope:
-      path: ""
-      type: categories
-    values:
-      sitemap: false
-      robots: noindex
+exclude:
+  - "*.gem"
+  - "*.gemspec"
+  - docs
+  - tools
+  - README.md
+  - LICENSE
+  - purgecss.js
+  - "*.config.js"
+  - "package*.json"
+  - vendor
+  - assets/robots.txt
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - .jekyll-cache
+  - .jekyll-metadata
 
-# =========================
-# ARCHIVES
-# =========================
 jekyll-archives:
   enabled: [categories, tags]
   layouts:
@@ -132,31 +162,49 @@ jekyll-archives:
     tag: /tags/:name/
     category: /categories/:name/
 
-# =========================
-# SASS
-# =========================
-sass:
-  style: compressed
+jekyll-sitemap:
+  exclude:
+    - /assets/js/data/search.json
+    - /404.html
 
-# =========================
-# EXCLUDES
-# =========================
-exclude:
-  - node_modules
-  - vendor
-  - Gemfile
-  - Gemfile.lock
-  - README.md
-  - LICENSE
-  - tools
-  - docs
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      comments: true
+      toc: true
+      permalink: /posts/:title/
 
-# =========================
-# KRAMDOWN
-# =========================
-kramdown:
-  syntax_highlighter: rouge
-  syntax_highlighter_opts:
-    css_class: highlight
-    block:
-      line_numbers: true
+  - scope:
+      path: _drafts
+    values:
+      comments: false
+
+  - scope:
+      path: ""
+      type: tabs
+    values:
+      layout: page
+      permalink: /:title/
+
+  - scope:
+      path: ""
+      type: pages
+    values:
+      sitemap: true
+
+  - scope:
+      path: "tags/"
+    values:
+      sitemap: false
+
+  - scope:
+      path: "categories/"
+    values:
+      sitemap: false
+
+html-proofer:
+  check_external_hash: false
+  enforce_https: false
