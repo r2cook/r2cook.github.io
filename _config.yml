@@ -237,3 +237,5 @@ jekyll-sitemap:
   exclude:
     - /assets/js/data/search.json
     - /404.html
+    - /tags/
+    - /categories/
