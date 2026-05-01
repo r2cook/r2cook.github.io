@@ -162,11 +162,6 @@ jekyll-archives:
     tag: /tags/:name/
     category: /categories/:name/
 
-jekyll-sitemap:
-  exclude:
-    - /assets/js/data/search.json
-    - /404.html
-
 defaults:
   - scope:
       path: ""
@@ -188,22 +183,6 @@ defaults:
     values:
       layout: page
       permalink: /:title/
-
-  - scope:
-      path: ""
-      type: pages
-    values:
-      sitemap: true
-
-  - scope:
-      path: "tags/"
-    values:
-      sitemap: false
-
-  - scope:
-      path: "categories/"
-    values:
-      sitemap: false
 
 html-proofer:
   check_external_hash: false
