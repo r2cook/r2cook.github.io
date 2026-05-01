@@ -1,207 +1,128 @@
-# The Site Configuration
-
-# Import the theme
+# =========================
+# THEME
+# =========================
 theme: jekyll-theme-chirpy
 
-# The language of the webpage › http://www.lingoes.net/en/translator/langcode.htm
-# If it has the same name as one of the files in folder `_data/locales`, the layout language will also be changed,
-# otherwise, the layout language will use the default value of 'en'.
 lang: en
-
-# Change to your timezone › https://zones.arilyn.cc
 timezone: Africa/Cairo
 
-# jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
-# ↓ --------------------------
+# =========================
+# SITE INFO
+# =========================
+title: r2cook
+tagline: Red Teaming | CTFs | OSCP Journey
 
-title: r2cook # the main title
-
-tagline: Red Teaming | CTFs | OSCP Journey # it will display as the subtitle
-
-description: >- # used by seo meta and the atom feed
+description: >-
   Cybersecurity blog by r2cook featuring CTF writeups, red teaming notes, OSCP preparation, and penetration testing research.
 
-# Fill in the protocol & hostname for your site.
-# E.g. 'https://username.github.io', note that it does not end with a '/'.
 url: "https://r2cook.github.io"
+baseurl: ""
 
+# =========================
+# SOCIAL / SEO
+# =========================
 github:
-  username: r2cook # change to your GitHub username
+  username: r2cook
 
 twitter:
-  username: 0xr2cook # change to your Twitter username
+  username: 0xr2cook
 
 social:
-  # Change to your full name.
-  # It will be displayed as the default author of the posts and the copyright owner in the Footer
   name: r2cook
-  email: r2cook@gmail.com # change to your email address
-  fediverse_handle: # fill in your fediverse handle. E.g. "@username@domain.com"
+  email: r2cook@gmail.com
   links:
-    # The first element serves as the copyright owner's link
-    - https://twitter.com/0xr2cook # change to your Twitter homepage
-    - https://github.com/r2cook # change to your GitHub homepage
-    # Uncomment below to add more social links
-    # - https://www.facebook.com/username
-    # - https://www.linkedin.com/in/username
+    - https://twitter.com/0xr2cook
+    - https://github.com/r2cook
 
-# Site Verification Settings
-webmaster_verifications:
-  google: # fill in your Google verification code
-  bing: # fill in your Bing verification code
-  alexa: # fill in your Alexa verification code
-  yandex: # fill in your Yandex verification code
-  baidu: # fill in your Baidu verification code
-  facebook: # fill in your Facebook verification code
+# =========================
+# THEME SETTINGS
+# =========================
+theme_mode: dark
+toc: true
+paginate: 10
 
-# ↑ --------------------------
-# The end of `jekyll-seo-tag` settings
+avatar: /assets/img/logo.png
 
-# Web Analytics Settings
+# =========================
+# ANALYTICS
+# =========================
 analytics:
   google:
     id: G-CQHH3DZ94X
-  goatcounter:
-    id: # fill in your goatcounter ID
-  umami:
-    id: # fill in your Umami ID
-    domain: # fill in your Umami domain
-  matomo:
-    id: # fill in your Matomo ID
-    domain: # fill in your Matomo domain
-  cloudflare:
-    id: # fill in your Cloudflare Web Analytics token
-  fathom:
-    id: # fill in your Fathom Site ID
 
-# Page views settings
 pageviews:
-  provider: # now only supports 'goatcounter'
+  provider:
 
-# Prefer color scheme setting.
-#
-# Note: Keep empty will follow the system prefer color by default,
-# and there will be a toggle to switch the theme between dark and light
-# on the bottom left of the sidebar.
-#
-# Available options:
-#
-#     light — Use the light color scheme
-#     dark — Use the dark color scheme
-#
-theme_mode: dark # [light | dark]
-
-# The CDN endpoint for media resources.
-# Notice that once it is assigned, the CDN url
-# will be added to all media resources (site avatar, posts' images, audio and video files) paths starting with '/'
-#
-# e.g. 'https://cdn.com'
-cdn:
-
-# the avatar on sidebar, support local or CORS resources
-avatar: /assets/img/logo.png
-
-# The URL of the site-wide social preview image used in SEO `og:image` meta tag.
-# It can be overridden by a customized `page.image` in front matter.
-social_preview_image: # string, local or CORS resources
-
-# boolean type, the global switch for TOC in posts.
-toc: true
-
+# =========================
+# COMMENTS (disabled)
+# =========================
 comments:
-  # Global switch for the post-comment system. Keeping it empty means disabled.
-  provider: # [disqus | utterances | giscus]
-  # The provider options are as follows:
-  disqus:
-    shortname: # fill with the Disqus shortname. › https://help.disqus.com/en/articles/1717111-what-s-a-shortname
-  # utterances settings › https://utteranc.es/
-  utterances:
-    repo: # <gh-username>/<repo>
-    issue_term: # < url | pathname | title | ...>
-  # Giscus options › https://giscus.app
-  giscus:
-    repo: # <gh-username>/<repo>
-    repo_id:
-    category:
-    category_id:
-    mapping: # optional, default to 'pathname'
-    strict: # optional, default to '0'
-    input_position: # optional, default to 'bottom'
-    lang: # optional, default to the value of `site.lang`
-    reactions_enabled: # optional, default to the value of `1`
+  provider:
 
-# Self-hosted static assets, optional › https://github.com/cotes2020/chirpy-static-assets
-assets:
-  self_host:
-    enabled: # boolean, keep empty means false
-    # specify the Jekyll environment, empty means both
-    # only works if `assets.self_host.enabled` is 'true'
-    env: # [development | production]
-
+# =========================
+# PWA
+# =========================
 pwa:
-  enabled: true # The option for PWA feature (installable)
+  enabled: true
   cache:
-    enabled: true # The option for PWA offline cache
-    # Paths defined here will be excluded from the PWA cache.
-    # Usually its value is the `baseurl` of another website that
-    # shares the same domain name as the current website.
-    deny_paths:
-      # - "/example"  # URLs match `<SITE_URL>/example/*` will not be cached by the PWA
+    enabled: true
 
-paginate: 10
+# =========================
+# SEO CLEAN CONTROL
+# =========================
+defaults:
 
-# The base URL of your site
-baseurl: ""
+  # POSTS (INDEXED)
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      comments: true
+      toc: true
+      permalink: /posts/:title/
+      sitemap: true
 
-# ------------ The following options are not recommended to be modified ------------------
+  # PAGES (INDEXED)
+  - scope:
+      path: ""
+      type: pages
+    values:
+      sitemap: true
 
-kramdown:
-  footnote_backlink: "&#8617;&#xfe0e;"
-  syntax_highlighter: rouge
-  syntax_highlighter_opts: # Rouge Options › https://github.com/jneen/rouge#full-options
-    css_class: highlight
-    # default_lang: console
-    span:
-      line_numbers: false
-    block:
-      line_numbers: true
-      start_line: 1
+  # TABS
+  - scope:
+      path: ""
+      type: tabs
+    values:
+      layout: page
+      permalink: /:title/
 
-collections:
-  tabs:
-    output: true
-    sort_by: order
+  # DRAFTS
+  - scope:
+      path: _drafts
+    values:
+      comments: false
 
-sass:
-  style: compressed
+  # 🚨 IMPORTANT: TAGS = NOINDEX
+  - scope:
+      path: ""
+      type: tags
+    values:
+      sitemap: false
+      robots: noindex
 
-compress_html:
-  clippings: all
-  comments: all
-  endings: all
-  profile: false
-  blanklines: false
-  ignore:
-    envs: [development]
+  # 🚨 IMPORTANT: CATEGORIES = NOINDEX
+  - scope:
+      path: ""
+      type: categories
+    values:
+      sitemap: false
+      robots: noindex
 
-exclude:
-  - "*.gem"
-  - "*.gemspec"
-  - docs
-  - tools
-  - README.md
-  - LICENSE
-  - purgecss.js
-  - "*.config.js"
-  - "package*.json"
-  - vendor
-  - assets/robots.txt
-  - Gemfile
-  - Gemfile.lock
-  - node_modules
-  - .jekyll-cache
-  - .jekyll-metadata
-
+# =========================
+# ARCHIVES
+# =========================
 jekyll-archives:
   enabled: [categories, tags]
   layouts:
@@ -211,65 +132,31 @@ jekyll-archives:
     tag: /tags/:name/
     category: /categories/:name/
 
-jekyll-sitemap:
-  exclude:
-    - /assets/js/data/search.json
-    - /404.html
-    - /tags/*
-    - /categories/*
+# =========================
+# SASS
+# =========================
+sass:
+  style: compressed
 
-defaults:
-  # =========================
-  # Posts
-  # =========================
-  - scope:
-      path: ""
-      type: posts
-    values:
-      layout: post
-      comments: true
-      toc: true
-      permalink: /posts/:title/
+# =========================
+# EXCLUDES
+# =========================
+exclude:
+  - node_modules
+  - vendor
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - LICENSE
+  - tools
+  - docs
 
-  # =========================
-  # Drafts
-  # =========================
-  - scope:
-      path: _drafts
-    values:
-      comments: false
-
-  # =========================
-  # Tabs (Chirpy pages)
-  # =========================
-  - scope:
-      path: ""
-      type: tabs
-    values:
-      layout: page
-      permalink: /:title/
-
-  # =========================
-  # Normal Pages
-  # =========================
-  - scope:
-      path: ""
-      type: pages
-    values:
-      sitemap: true
-
-  # =========================
-  # Exclude TAG pages from sitemap
-  # =========================
-  - scope:
-      path: "tags/"
-    values:
-      sitemap: false
-
-  # =========================
-  # Exclude CATEGORY pages from sitemap
-  # =========================
-  - scope:
-      path: "categories/"
-    values:
-      sitemap: false
+# =========================
+# KRAMDOWN
+# =========================
+kramdown:
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: highlight
+    block:
+      line_numbers: true
